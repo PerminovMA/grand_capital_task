@@ -1,0 +1,18 @@
+<div>
+    <h2><kbd>{[{ repName }]}</kbd> repository statistics </h2>
+
+    <div class="text-center {[{ visibility_loading_indicator }]}"><img src="static/img/process_indicator.gif"></div>
+
+    <table class="table" style="width: 200px;">
+        <tr>
+            <th> Char</th>
+            <th> Count</th>
+        </tr>
+        <tr ng-repeat="obj in charsStatistic">
+            <td><kbd> {[{ obj.char }]} </kbd></td>
+            <td> {[{ obj.count }]}</td>
+        </tr>
+    </table>
+
+    <div chart></div>
+</div>

@@ -1,0 +1,13 @@
+<div>
+
+    <h2> Choose your git repository: </h2>
+
+    <table class="table">
+        <tr ng-repeat="rep in reps">
+            <td><a href="#/rep/{[{ rep.owner.login }]}/{[{ rep.name }]}">{[{rep.name}]}</a></td>
+        </tr>
+    </table>
+    
+    <div class="text-center {[{ visibility_loading_indicator }]}"><img src="static/img/process_indicator.gif"></div>
+
+</div>

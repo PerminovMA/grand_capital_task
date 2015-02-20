@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %} GitHub statistic {% endblock %}
+
+
+{% block login_btn %}
+    {% if logged %}
+        <li><a href="{% url 'git_manager.oauth_views.log_out' %}">Log out</a></li>
+    {% else %}
+        <li class="active"><a href="{% url 'git_manager.oauth_views.github_auth_connect' %}">Log in</a></li>
+    {% endif %}
+{% endblock %}
+
+
+{% block navbar_btns %}
+    {% if logged %}
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/about">About</a></li>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% if logged %}
+        <div ng-view></div>
+    {% else %}
+        <div class="text-center">
+            <h1> Welcome! </h1> <br>
+            <a href="{% url 'git_manager.oauth_views.github_auth_connect' %}" class="btn btn-primary btn-lg"
+               role="button">Please, Log in</a>
+        </div>
+    {% endif %}
+{% endblock %}
