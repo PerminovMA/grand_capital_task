@@ -4,7 +4,7 @@ from django.http import Http404
 
 
 def get_access_token(code):
-    """ Exchange code for an access token.
+    """ Exchange code for an access token
     more info: developer.github.com/v3/oauth/    (see step 2)
     """
     params = {
